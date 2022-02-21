@@ -1,0 +1,13 @@
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/controller/CustomerController.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/mapper/DateMapper.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/mapper/BeerMapper.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/model/CustomerDTO.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/model/BeerPagedList.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/controller/MvxExceptionHandler.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/repositories/BeerRepository.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/BreweryApplication.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/model/BeerStyleEnum.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/model/BeerDTO.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/web/controller/BeerController.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/domain/Beer.java
+/home/lvu/Escritorio/spring/sfg/brewery/src/main/java/group/springframework/brewery/bootstrap/BeerLoader.java

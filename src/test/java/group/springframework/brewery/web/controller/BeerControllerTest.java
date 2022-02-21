@@ -3,12 +3,14 @@ package group.springframework.brewery.web.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import group.springframework.brewery.web.model.BeerDTO;
+import group.springframework.brewery.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,7 +36,7 @@ class BeerControllerTest {
 
     @Test
     void saveNewBeer() throws Exception {
-        BeerDTO beerDTO = BeerDTO.builder().build();
+        BeerDTO beerDTO = getValidBeerDto();
         String beerDTOJson = objectMapper.writeValueAsString(beerDTO);
 
         mockMvc.perform(post("/api/v1/beer/")
@@ -45,12 +47,21 @@ class BeerControllerTest {
 
     @Test
     void updateBeerById() throws Exception {
-        BeerDTO beerDTO = BeerDTO.builder().build();
+        BeerDTO beerDTO = getValidBeerDto();
         String beerDTOJson = objectMapper.writeValueAsString(beerDTO);
 
         mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID().toString())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(beerDTOJson))
                 .andExpect(status().isNoContent());
+    }
+
+    BeerDTO getValidBeerDto() {
+        return BeerDTO.builder()
+                .beerName("my beer")
+                .beerStyle(BeerStyleEnum.ALE)
+                .price(new BigDecimal("2.99"))
+                .upc(132312123L)
+                .build();
     }
 }
