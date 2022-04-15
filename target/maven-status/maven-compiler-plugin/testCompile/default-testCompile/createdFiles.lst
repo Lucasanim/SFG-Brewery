@@ -1,0 +1,3 @@
+group/springframework/brewery/BreweryApplicationTests.class
+group/springframework/brewery/services/inventory/BeerInventoryServiceRestTemplateImplTest.class
+group/springframework/brewery/web/controller/BeerControllerTest.class

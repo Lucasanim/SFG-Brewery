@@ -1,4 +1,4 @@
-package group.springframework.brewery.web.model;
+package group.springframework.brewery.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

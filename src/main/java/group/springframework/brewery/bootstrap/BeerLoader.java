@@ -2,40 +2,56 @@ package group.springframework.brewery.bootstrap;
 
 import group.springframework.brewery.domain.Beer;
 import group.springframework.brewery.repositories.BeerRepository;
+import group.springframework.brewery.model.BeerStyleEnum;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+@RequiredArgsConstructor
 @Component
 public class BeerLoader implements CommandLineRunner {
 
-    private final BeerRepository beerRepository;
+    public static final String BEER_1_UPC = "0631234200036";
+    public static final String BEER_2_UPC = "0631234300019";
+    public static final String BEER_3_UPC = "0083783375213";
 
-    public BeerLoader(BeerRepository beerRepository) {
-        this.beerRepository = beerRepository;
-    }
+    private final BeerRepository beerRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        loadBeerObjects();
+        if (beerRepository.count() == 0) {
+            loadBeerObjects();
+        }
     }
 
     private void loadBeerObjects() {
         if (beerRepository.count() == 0) {
             beerRepository.save(Beer.builder()
                     .beerName("Mango Bobs")
-                    .beerStyle("IPA")
+                    .beerStyle(BeerStyleEnum.IPA.name())
                     .quantityToBrew(200)
-                    .upc(3370100000L)
+                    .minOnHand(200)
+                    .upc(BEER_2_UPC)
                     .price(new BigDecimal("12.95"))
                     .build());
 
             beerRepository.save(Beer.builder()
                     .beerName("Galaxy Cat")
-                    .beerStyle("PALE_ALE")
+                    .beerStyle(BeerStyleEnum.PALE_ALE.name())
                     .quantityToBrew(200)
-                    .upc(3370100001L)
+                    .minOnHand(200)
+                    .upc(BEER_1_UPC)
+                    .price(new BigDecimal("11.95"))
+                    .build());
+
+            beerRepository.save(Beer.builder()
+                    .beerName("Galaxy Cat")
+                    .beerStyle(BeerStyleEnum.LAGER.name())
+                    .quantityToBrew(200)
+                    .minOnHand(200)
+                    .upc(BEER_3_UPC)
                     .price(new BigDecimal("11.95"))
                     .build());
         }

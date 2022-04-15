@@ -1,4 +1,4 @@
-package group.springframework.brewery.web.model;
+package group.springframework.brewery.model;
 
 public enum BeerStyleEnum {
     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SAISON
